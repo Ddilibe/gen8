@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+env=$(pip freeze | grep virtualenv)
+
+if [ -z "$env" ]; then
+    pip install virtualenv
+fi
+
+virtualenv venv
+source venv/bin/activate
